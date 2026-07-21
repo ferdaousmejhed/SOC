@@ -31,11 +31,15 @@ Ce projet vise à réduire le temps de réponse aux incidents (**MTTR**) en auto
 
 1. **Détection Brute Force (Wazuh)** :
    - Capture de l'alerte SIEM par webhook n8n.
-   - Analyse par l'Agent IA et exécution de scripts de blocage/remédiation à distance via SSH.
-2. **Surveillance des Ressources (Zabbix)** :
+   - Analyse par l'Agent IA et exécution de scripts de blocage/remédiation automatique.
+2. **Détection Malware (Wazuh & FIM)** :
+   - Détection de la création/modification d'un fichier suspect ou de signatures de malware.
+   - Déclenchement du workflow de remédiation n8n.
+   - Évaluation du risque/contexte par l'**Agent IA**.
+   - Suppression sécurisée du fichier infecté sur l'agent cible via SSH et privilèges appliqués.
+3. **Surveillance des Ressources (Zabbix)** :
    - Remontée des pics de charge CPU / RAM.
-   - Déclenchement automatique des flux d'investigation.
-3. **Notifications d'Équipe** :
+4. **Notifications d'Équipe** :
    - Restitution synthétique des événements et actions prises directement sur Slack.
 
 ---
@@ -51,3 +55,9 @@ Ce projet vise à réduire le temps de réponse aux incidents (**MTTR**) en auto
 | **Linux / SSH** | Remote Target Remediation |
 
 ---
+
+## ⚙️ Installation & Configuration
+
+1. **Cloner le projet** :
+   ```bash
+   git clone [https://github.com/ferdaousmejhed/SOC.git](https://github.com/ferdaousmejhed/SOC.git)
